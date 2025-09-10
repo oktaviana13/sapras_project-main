@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kegiatan – SAPRAS SMA</title>
+  <link rel="stylesheet" href="kegiatan.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../image/disdik.png" alt="Logo Disdik">
+      <img src="../image/logo.png" alt="Logo">
+      <h3>Dinas Pendidikan</h3>
+    </div>
+    <ul>
+      <li><i class="fa fa-home"></i> Dashboard</li>
+      <li><i class="fa fa-school"></i> Data Sekolah</li>
+      <li><i class="fa fa-building"></i> Data Kabupaten</li>
+      <li class="active"><i class="fa fa-calendar-days"></i> Kegiatan</li>
+      <li><i class="fa fa-file-alt"></i> Laporan</li>
+    </ul>
+    <button class="logout"><i class="fa fa-sign-out-alt"></i> Logout</button>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <!-- HEADER -->
+    <div class="header">
+      <h2>Profil Pembangunan SAPRAS SMA</h2>
+      <div class="user">
+        <span>Oktaviana Dwi</span>
+        <img src="https://ui-avatars.com/api/?name=Oktaviana+Dwi&background=3a6ff7&color=fff&rounded=true" alt="User">
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filters">
+      <select>
+        <option>Kabupaten/Kota</option>
+        <option>Tebo</option>
+        <option>Merangin</option>
+        <option>Sarolangun</option>
+      </select>
+      <select>
+        <option>Tahun</option>
+        <option>2023</option>
+        <option>2024</option>
+      </select>
+      <select>
+        <option>Jenis SAPRAS</option>
+        <option>Ruang Kelas</option>
+        <option>Laboratorium</option>
+      </select>
+      <select>
+        <option>Nama Kegiatan</option>
+        <option>Pembangunan</option>
+        <option>Rehabilitasi</option>
+        <option>Rehabilitasi</option>
+      </select>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="tools">
+      <div class="search-box">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Search...">
+      </div>
+      <button class="btn-blue">Tambah</button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nama Sekolah</th>
+            <th>Foto Kegiatan</th>
+            <th>Nilai Kontrak</th>
+            <th>Volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SMAN 1 Tebo</td>
+            <td><img src="../image/rkb.png" alt="Foto"></td>
+            <td>Rp 100.000.000</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>SMAN 3 Tebo</td>
+            <td><img src="../image/rkb.png" alt="Foto"></td>
+            <td>Rp 200.000.000</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>SMAN 4 Tebo</td>
+            <td><img src="../image/rkb.png" alt="Foto"></td>
+            <td>Rp 300.000.000</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

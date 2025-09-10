@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Kabupaten</title>
+  <link rel="stylesheet" href="kabupaten.css">
+    <!-- Tambahkan ikon (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../image/disdik.png" alt="Logo" />
+      <img src="../image/logo.png" alt="Logo" />
+      <h3>Dinas Pendidikan</h3>
+    </div>
+    <ul>
+      <li><i class="fa fa-home"></i> Dashboard</li>
+      <li><i class="fa fa-school"></i> Data Sekolah</li>
+      <li class="active"><i class="fa fa-building"></i> Data Kabupaten</li>
+      <li><i class="fa fa-calendar-day"></i> Kegiatan</li>
+      <li><i class="fa fa-file-alt"></i> Laporan</li>
+    </ul>
+    <button class="logout"><i class="fa fa-sign-out-alt"></i> Logout</button>
+  </div>
+
+
+  <!-- MAIN -->
+  <div class="main">
+    <!-- HEADER -->
+    <div class="page-header">
+      <h2>Sarana & Prasarana SMA</h2>
+    </div>
+    
+    <!-- CARDS -->
+<div class="cards">
+  <div class="card">
+    <h3>50</h3>
+    <p>SMA</p>
+  </div>
+  <div class="card">
+    <h3>450</h3>
+    <p>Sarana & Prasarana</p>
+  </div>
+  <div class="card legend-card">
+    <div class="legend-row">
+      <span class="legend-percent green">60%</span>
+      <span class="legend-label">Baik</span>
+    </div>
+    <div class="legend-row">
+      <span class="legend-percent orange">25%</span>
+      <span class="legend-label">Rusak Ringan</span>
+    </div>
+    <div class="legend-row">
+      <span class="legend-percent red">15%</span>
+      <span class="legend-label">Rusak Berat</span>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <div class="left">
+    <select>
+      <option value="">Filter Kabupaten</option>
+      <option value="tebo">Kabupaten Tebo</option>
+      <option value="merangin">Kabupaten Merangin</option>
+      <option value="sarolangun">Kabupaten Sarolangun</option>
+      <option value="muaro_jambi">Kabupaten Muaro Jambi</option>
+      <option value="bungo">Kabupaten Bungo</option>
+      <option value="kerinci">Kabupaten Kerinci</option>
+      <option value="batanghari">Kabupaten Batang Hari</option>
+      <option value="kotajambi">Kota Jambi</option>
+    </select>
+    <select>
+      <option value="">Tahun Ajaran</option>
+      <option>2020/2021</option>
+      <option>2021/2022</option>
+      <option>2022/2023</option>
+      <option>2023/2024</option>
+      <option>2024/2025</option>
+    </select>
+  </div>
+  <div class="right">
+    <button class="btn-blue">Tambah</button>
+  </div>
+</div>
+
+
+    <!-- TABLE -->
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Nama SMA</th>
+            <th>Status</th>
+            <th>Jumlah Sapras</th>
+            <th>Baik</th>
+            <th>Rusak Ringan</th>
+            <th>Rusak Berat</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nama-sekolah">SMAN 1 Tebo</td>
+            <td class="status">Negeri</td>
+            <td class="center">42</td>
+            <td class="center">38</td>
+            <td class="center">3</td>
+            <td class="center">1</td>
+            <td class="aksi">
+              <button class="btn-edit">Edit</button>
+              <button class="btn-delete">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="nama-sekolah">SMAS Tebo</td>
+            <td class="status">Swasta</td>
+            <td class="center">28</td>
+            <td class="center">22</td>
+            <td class="center">5</td>
+            <td class="center">1</td>
+            <td class="aksi">
+              <button class="btn-edit">Edit</button>
+              <button class="btn-delete">Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

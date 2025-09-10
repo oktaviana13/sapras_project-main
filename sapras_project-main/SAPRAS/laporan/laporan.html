@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Sarana & Prasarana SMA</title>
+  <link rel="stylesheet" href="laporan.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+    <img src="../image/disdik.png" alt="Logo" />
+    <img src="../image/logo.png" alt="Logo" />
+    </div>
+    <ul>
+      <li><i class="fa fa-home"></i> Dashboard</li>
+      <li><i class="fa fa-school"></i> Data Sekolah</li>
+      <li><i class="fa fa-city"></i> Data Kabupaten</li>
+      <li><i class="fa fa-calendar-day"></i> Kegiatan </li>
+      <li class="active"><i class="fa fa-file-alt"></i> Laporan</li>
+    </ul>
+    <button class="logout">Logout</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <!-- HEADER -->
+    <div class="header">
+      <h2>Laporan Sarana & Prasarana SMA</h2>
+      <div class="user-info">
+         <span>Oktaviana Dwi</span>
+        <img src="https://ui-avatars.com/api/?name=Oktaviana+Dwi&background=3a6ff7&color=fff&rounded=true" alt="User"/>
+      
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-bar">
+      <select>
+        <option value="">Kabupaten/Kota</option>
+        <option value="tebo">Kabupaten Tebo</option>
+        <option value="merangin">Kabupaten Merangin</option>
+        <option value="sarolangun">Kabupaten Sarolangun</option>
+        <option value="muaro_jambi">Kabupaten Muaro Jambi</option>
+        <option value="bungo">Kabupaten Bungo</option>
+        <option value="kerinci">Kabupaten Kerinci</option>
+        <option value="batanghari">Kabupaten Batanghari</option>
+        <option value="kotajambi">Kota Jambi</option>
+        <option value="kota Sungai Penuh">Kota Sungai Penuh</option>
+        <option value="kabupaten Tanjung Jabung Barat">Kabupaten Tanjung Jabung Barat</option>
+        <option value="kabupaten Tanjung Jabung Timur">Kabupaten Tanjung Jabung Timur</option>
+      </select>
+      <select>
+        <option>Tahun</option>
+          <option>2020/2021</option>
+          <option>2021/2022</option>
+          <option>2022/2023</option>
+          <option>2023/2024</option>
+          <option>2024/2025</option>
+      </select>
+      <select>
+        <option>Jenis Sapras</option>
+          <option>Laboratorium Biologi</option>
+          <option>Laboratorium Kimia</option>
+          <option>Laboratorium Fisika</option>
+          <option>Laboratorium Bahasa</option>
+          <option>Laboratorium Komputer</option>
+          <option>Ruang Kelas</option>
+          <option>Ruang Kepala Sekolah</option>
+          <option>Ruang Tata Usaha</option>
+          <option>Ruang UKS</option>
+          <option>Ruang Guru</option>
+          <option>Toilet</option>
+          <option>Mushola</option>
+          <option>Perpustakaan</option>
+          <option>Pagar</option>
+          <option>Lapangan Basket</option>
+          <option>Lapangan Upacara</option>
+          <option>Lapangan Futsal</option>
+          <option>Ruang Bimbingan Konseling</option>
+      </select>
+      <button class="btn-export">Export</button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Nama Kabupaten</th>
+            <th>SMA Negeri</th>
+            <th>SMA Swasta</th>
+            <th>Jumlah Sapras</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kabupaten Tebo</td>
+            <td>100</td>
+            <td>100</td>
+            <td>45</td>
+            <td class="aksi">
+              <button class="btn-edit">Edit</button>
+              <button class="btn-delete">Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+      <div class="chart">
+        <h4>Perbandingan Sarana & Prasarana SMA</h4>
+        <canvas id="donutChart"></canvas>
+      </div>
+      <div class="chart">
+        <h4>Perkembangan Sarana & Prasarana</h4>
+        <canvas id="lineChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Donut Chart
+    const ctxDonut = document.getElementById('donutChart');
+    new Chart(ctxDonut, {
+      type: 'doughnut',
+      data: {
+        labels: ['Baik', 'Rusak Ringan', 'Rusak Berat'],
+        datasets: [{
+          data: [60, 25, 15],
+          backgroundColor: ['#28a745', '#f59e0b', '#dc3545']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' }
+        }
+      }
+    });
+
+    // Line Chart
+    const ctxLine = document.getElementById('lineChart');
+    new Chart(ctxLine, {
+      type: 'line',
+      data: {
+        labels: ['2016','2017','2018','2019','2020','2021','2022'],
+        datasets: [{
+          label: 'Jumlah',
+          data: [100, 120, 130, 150, 170, 200, 190],
+          fill: true,
+          borderColor: '#3a6ff7',
+          backgroundColor: 'rgba(58,111,247,0.2)',
+          tension: 0.3,
+          pointBackgroundColor: '#3a6ff7'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true, position: 'top' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
