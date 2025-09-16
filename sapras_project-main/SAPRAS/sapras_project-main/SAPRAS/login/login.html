@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../login/login.css">
+    <!-- Tambahin Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box">
+            <div class="container">
+                <div class="form">
+                    <h2>Login</h2>
+                    <form action="login.php" method="POST">
+                        
+                        <!-- Input Email dengan ikon -->
+                        <div class="inputBox">
+                            <i class="fa fa-user"></i>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        
+                        <!-- Input Password dengan ikon -->
+                        <div class="inputBox">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        
+                        <div class="checkBox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        
+                        <div class="inputBox">
+                           <button class="btn-login">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Data Sapras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --violet:#e9c9f3;
+      --violet-focus:#b96ad4;
+      --border:#e6e7ef;
+      --shadow:0 10px 28px rgba(16,24,40,.08);
+      --primary:#5a8df6;  /* Simpan */
+      --danger:#c81919;   /* Batal  */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--text);
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      line-height:1.5;
+    }
+    .wrap{
+      max-width:720px;margin:28px auto;background:var(--card);
+      border:1px solid var(--border);box-shadow:var(--shadow);
+      border-radius:24px;padding:28px;
+    }
+    h1{
+      margin:4px 0 16px;font-size:28px;font-weight:700;text-align:center;
+    }
+    .field{margin:14px 0 18px}
+    label{display:block;font-weight:700;font-size:20px;margin-bottom:10px}
+    .control{
+      display:flex;align-items:center;gap:10px;
+      border:2px solid var(--violet); border-radius:14px;background:#fff;
+      padding:14px 16px; transition:border-color .15s ease, box-shadow .15s ease;
+    }
+    input[type="text"], input[type="number"], select{
+      appearance:none;border:none;outline:none;background:transparent;
+      width:100%;font:inherit;color:var(--text);
+    }
+    .control:focus-within{
+      border-color:var(--violet-focus);
+      box-shadow:0 0 0 3px rgba(185,106,212,.15);
+    }
+    .caret{
+      width:0;height:0;margin-left:auto;border-left:7px solid transparent;
+      border-right:7px solid transparent;border-top:8px solid #111827;opacity:.7;
+    }
+    .radio-row{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+    .radio{display:inline-flex;align-items:center;gap:10px;font-weight:600;cursor:pointer}
+    .radio input{accent-color:#111827;transform:scale(1.1)}
+    .actions{
+      display:flex;gap:18px;justify-content:space-between;max-width:420px;
+      margin:26px auto 6px;
+    }
+    .btn{
+      flex:1;border:none;color:#fff;font-weight:700;cursor:pointer;border-radius:12px;
+      padding:12px 18px;box-shadow:0 8px 18px rgba(0,0,0,.08);
+      transition:transform .06s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--primary)}
+    .btn-danger{background:var(--danger)}
+    @media (max-width:560px){ .wrap{padding:22px} label{font-size:18px} }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="title">
+    <h1 id="title">Edit Data</h1>
+
+    <form id="formEditKab" novalidate>
+      <!-- ID record (ganti sesuai data) -->
+      <input type="hidden" id="recordId" name="id" value="123">
+
+      <div class="field">
+        <label for="nama">Nama SMA</label>
+        <div class="control">
+          <input id="nama" name="nama" type="text" value="SMA Negeri 3 Tebo" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="status">Status Sekolah</label>
+        <div class="control">
+          <select id="status" name="status" required>
+            <option value="Negeri" selected>Negeri</option>
+            <option value="Swasta">Swasta</option>
+          </select>
+          <span class="caret" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="kab">Kabupaten/Kota</label>
+        <div class="control">
+          <select id="kab" name="kab" required>
+            <option selected>Kabupaten Tebo</option>
+            <option>Kabupaten Batanghari</option>
+            <option>Kabupaten Bungo</option>
+            <option>Kota Jambi</option>
+          </select>
+          <span class="caret" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="tahun">Tahun Ajaran</label>
+        <div class="control">
+          <select id="tahun" name="tahun" required>
+            <option selected>2023/2024</option>
+            <option>2024/2025</option>
+            <option>2025/2026</option>
+          </select>
+          <span class="caret" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="jumlah">Jumlah Sapras</label>
+        <div class="control">
+          <input id="jumlah" name="jumlah" type="number" min="0" step="1" value="200" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="radio-row" role="radiogroup" aria-label="Kondisi">
+          <label class="radio"><input type="radio" name="kondisi" value="Baik" required> Baik</label>
+          <label class="radio"><input type="radio" name="kondisi" value="Rusak Ringan"> Rusak Ringan</label>
+          <label class="radio"><input type="radio" name="kondisi" value="Rusak Berat"> Rusak Berat</label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Simpan</button>
+        <button class="btn btn-danger" type="button" id="btnBatal">Batal</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    // Ganti sesuai backend, contoh: Laravel REST /api/sapras/:id
+    const API_BASE = "/api/sapras";
+
+    const form = document.getElementById("formEditKab");
+    const btnBatal = document.getElementById("btnBatal");
+    const recordIdEl = document.getElementById("recordId");
+
+    // Opsional: jika halaman dibuka dengan ?id=xx, gunakan id tersebut
+    (function fromQuery(){
+      const params = new URLSearchParams(location.search);
+      const qid = params.get("id");
+      if (qid) recordIdEl.value = qid;
+    })();
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      const fd = new FormData(form);
+      const id = fd.get("id");
+      const payload = Object.fromEntries(fd.entries());
+
+      try {
+        const res = await fetch(`${API_BASE}/${encodeURIComponent(id)}`, {
+          method: "PATCH", // gunakan PUT jika backend mewajibkan
+          headers: {
+            "Content-Type": "application/json",
+            // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+          },
+          body: JSON.stringify(payload),
+          credentials: "include"
+        });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        await res.json().catch(()=> ({}));
+        alert("Perubahan berhasil disimpan.");
+        // window.location.href = "/sapras"; // redirect jika perlu
+      } catch (err) {
+        console.error(err);
+        alert("Terjadi kesalahan saat menyimpan perubahan.");
+      }
+    });
+
+    btnBatal.addEventListener("click", () => {
+      if (document.referrer) history.back(); else form.reset();
+    });
+  </script>
+</body>
+</html>

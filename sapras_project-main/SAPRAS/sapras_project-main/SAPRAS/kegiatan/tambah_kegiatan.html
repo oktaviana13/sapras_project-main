@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tambah Kegiatan</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="tambah_kegiatan.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1 class="title">Tambah Kegiatan</h1>
+
+      <form class="form" action="#" method="post" enctype="multipart/form-data">
+        <!-- Nama SMA -->
+        <div class="field">
+          <label for="nama_sma" class="label">Nama SMA</label>
+          <input id="nama_sma" name="nama_sma" type="text" class="input" placeholder=""/>
+        </div>
+
+        <!-- Nama Kegiatan -->
+        <div class="field">
+          <label for="nama_kegiatan" class="label">Nama Kegiatan</label>
+          <div class="select-wrap">
+            <select id="nama_kegiatan" name="nama_kegiatan" class="select">
+              <option value="" hidden>Pilih</option>
+              <option>Pembangunan</option>
+              <option>Rehabilitasi</option>
+              <option>Pemeliharaan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Kabupaten/Kota -->
+        <div class="field">
+          <label for="kab_kota" class="label">Kabupaten/Kota</label>
+          <div class="select-wrap">
+            <select id="kab_kota" name="kab_kota" class="select">
+              <option value="" hidden>Pilih</option>
+              <option>Kabupaten Tebo</option>
+              <option>Kabupaten Batanghari</option>
+              <option>Kota Jambi</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tahun -->
+        <div class="field">
+          <label for="tahun" class="label">Tahun</label>
+          <input id="tahun" name="tahun" type="number" class="input" placeholder="2023" min="2000" max="2100"/>
+        </div>
+
+        <!-- Jenis Sapras -->
+        <div class="field">
+          <label for="jenis_sapras" class="label">Jenis Sapras</label>
+          <div class="select-wrap">
+            <select id="jenis_sapras" name="jenis_sapras" class="select">
+              <option value="" hidden>Pilih</option>
+              <option>Ruang Guru</option>
+              <option>Laboratorium</option>
+              <option>Toilet</option>
+              <option>Ruang Kelas</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Nilai Kontrak -->
+        <div class="field">
+          <label for="nilai_kontrak" class="label">Nilai Kontrak</label>
+          <input id="nilai_kontrak" name="nilai_kontrak" type="text" class="input" placeholder="10.000.000"/>
+        </div>
+
+        <!-- Volume -->
+        <div class="field">
+          <label for="volume" class="label">Volume</label>
+          <input id="volume" name="volume" type="number" class="input" placeholder="1" min="0"/>
+        </div>
+
+        <!-- Upload Gambar -->
+        <div class="field">
+          <label class="label">Upload Gambar</label>
+
+          <input id="gambar" name="gambar" type="file" class="file-input" accept="image/*"/>
+          <label for="gambar" class="dropzone">
+            <div class="cloud">
+              <!-- ikon cloud upload -->
+              <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 18h10a4 4 0 0 0 0-8h-.26A6 6 0 1 0 6 12"
+                      fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 13v-7M8.5 9.5 12 6l3.5 3.5" fill="none"
+                      stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="dz-text">Klik untuk unggah atau seret berkas ke sini</p>
+          </label>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button type="button" class="btn btn-danger">Batal</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

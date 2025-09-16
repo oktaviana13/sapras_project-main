@@ -1,0 +1,270 @@
+/* Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2;
+  padding: 10px 20px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* tambahkan bayangan */
+  position: relative;
+  border-bottom: 4px solid #1565c0; /* garis biru lebih gelap */
+  z-index: 10;
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;   /* sedikit ke bawah navbar */
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
+}
+
+
+.navbar .logo {
+    font-size: 20px;
+    font-weight: 100;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+.navbar ul li {
+    margin-left: 20px;
+}
+.navbar ul li a {
+    background-color: #fff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* Hover untuk link navbar */
+.navbar ul li a:hover {
+  color: #3B82F6; 
+  transition: 0.3s ease;       /* animasi halus */
+  background-color: #fff;   /* warna lebih gelap */
+  transform: scale(1.05);      /* sedikit membesar */
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: #1976d2;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+
+/* Hover untuk tombol login */
+.login-btn:hover {
+  background-color: #fff;   /* warna lebih gelap */
+  transform: scale(1.05);      /* sedikit membesar */
+  transition: all 0.3s ease;
+  color: #3B82F6;
+}
+
+.logo-container {
+    display: flex;
+    gap: 20px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Section Selamat Datang */
+.welcome-section {
+    background: url('../image/bg.png') no-repeat center center/cover;
+    height: 550px;
+    display: flex;              /* tambahkan flexbox */
+    justify-content: flex-start; /* posisi ke kiri */
+    align-items: center;        /* posisi vertikal tengah */
+    padding-left: 60px;         /* jarak dari sisi kiri */
+    padding-top: 20px;          /* jarak dari navbar */
+    position: relative;
+  color: #fff;
+  overflow: hidden; /* penting biar blur nggak keluar area */
+}
+
+/* Blur background dengan overlay */
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  color : aliceblue;
+  background: inherit;   /* ambil gambar dari parent */
+  filter: blur(8px);     /* atur tingkat blur */
+  transform: scale(1.1); /* biar blur nggak ada edge hitam */
+  z-index: 0;
+}
+
+/* Box tetap di atas blur */
+.welcome-box {
+  position: relative;
+  background-color: rgba(24, 123, 255, 0.85);
+  color: white;
+  padding: 40px;
+  width: 400px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.welcome-box h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.welcome-box .subtitle {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.welcome-box .institution {
+    font-weight: bold;
+}
+
+
+/* Visi & Misi */
+.visi-misi {
+    padding: 150px 200px;
+    text-align: center;
+    background: linear-gradient(180deg, #74b9ff, #dfe6e9);
+}
+.visi-misi h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.visi, .misi {
+    margin-top: 20px;
+}
+.misi ul {
+    list-style: disc;
+    text-align: left;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+
+/* section biru */
+.section-blue{
+background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+.container {
+  width: min(1100px, 95%);
+  margin: 0 auto;
+}
+
+
+/* Card besar */
+.big-card {
+  background: 
+  radial-gradient(circle at top left, #60A5FA, transparent 70%),
+  radial-gradient(circle at bottom right, #2563EB, transparent 70%),
+  linear-gradient(180deg, #3B82F6, #dfe6e9);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Bagian atas: cards ringkasan */
+.top-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.top-cards .card {
+  flex: 1 1 200px;
+  max-width: 240px;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Bagian tengah: charts */
+.middle-charts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.middle-charts .chart {
+  flex: 1 1 400px;
+  max-width: 500px;
+  height: 400px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Bagian bawah: tabel */
+.bottom-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.bottom-table th, .bottom-table td {
+  padding: 16px 15px;
+  border: 1px solid #dfe6e9;
+  text-align: left;
+}
+.bottom-table thead th {
+  color: #000;
+  font-weight: 600;
+}
+
+.card.blue {
+  border-left: 6px solid blue;
+}
+
+.card.green {
+  border-left: 6px solid #28a745;
+}
+
+.card.gray {
+  border-left: 6px solid #6c757d;
+}
+
+.card.legend {
+  border-left: 6px solid #ffc107;
+  text-align: left;
+}
+.chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #1976d2;
+    color: #fff;
+    padding: 30px;
+}

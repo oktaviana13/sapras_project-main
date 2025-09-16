@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  display: flex;
+  background: #f5f7fb;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: #1a3365;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 0px;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  width: 60px;
+  margin : 5px
+}
+
+.sidebar h3 {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.sidebar ul li {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background: #3B82F6;
+  border-radius: 10px;
+  margin: 4px 10px;
+}
+
+
+/* SUBMENU ITEMS */
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 30px; /* biar agak menjorok */
+}
+
+.submenu-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #ddd;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.submenu-item:hover {
+  background: #2c4a91;
+  color: #fff;
+}
+
+/* Submenu aktif SMA Negeri (biru muda) */
+.submenu-item.active-sma-negeri {
+  background: #3B82F6;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+/* Submenu aktif SMA Swasta (hijau) */
+.submenu-item.active-sma-swasta {
+  background: #3B82F6;
+  color: #fff;
+}
+
+.logout {
+  margin: 15px;
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MAIN */
+.main {
+  margin-left: 220px;
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+}
+.card span {
+  font-size: 14px;
+  color: #555;
+}
+
+/* CHARTS */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.chart {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* SECTION TABEL */
+.table-section {
+  background: #fff;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.table-title {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.table-box {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f0f0f0;
+}
+
+thead th {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+tbody td:first-child {
+  text-align: left;
+}
+
+.kondisi.hijau {
+  color: green;
+  font-weight: bold;
+}
+.kondisi.kuning {
+  color: orange;
+  font-weight: bold;
+}
+.kondisi.merah {
+  color: red;
+  font-weight: bold;
+}
+
+
+/* EXPORT */
+.export-box {
+  margin-top: 20px;
+  text-align: right;
+}
+.export {
+  background: #1976d2;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
