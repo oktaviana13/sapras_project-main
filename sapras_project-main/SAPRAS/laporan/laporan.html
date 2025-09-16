@@ -6,170 +6,245 @@
   <title>Laporan Sarana & Prasarana SMA</title>
   <link rel="stylesheet" href="laporan.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+
   <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="logo">
-    <img src="../image/disdik.png" alt="Logo" />
-    <img src="../image/logo.png" alt="Logo" />
+      <img src="../image/disdik.png" alt="Logo" />
+      <img src="../image/logo.png" alt="Logo" />
+      <h3>Dinas Pendidikan</h3>
     </div>
     <ul>
-      <li><i class="fa fa-home"></i> Dashboard</li>
-      <li><i class="fa fa-school"></i> Data Sekolah</li>
-      <li><i class="fa fa-city"></i> Data Kabupaten</li>
-      <li><i class="fa fa-calendar-day"></i> Kegiatan </li>
-      <li class="active"><i class="fa fa-file-alt"></i> Laporan</li>
-    </ul>
-    <button class="logout">Logout</button>
+  <li><i class="fa fa-home"></i> Dashboard</li>
+  <li><i class="fa fa-school"></i> Data Sekolah</li>
+  <ul class="submenu">
+    <li class="submenu-item">SMA Negeri</li>
+    <li class="submenu-item">SMA Swasta</li>
+  </ul>
+  <li><i class="fa fa-building"></i> Data Kabupaten</li>
+  <li><i class="fa fa-calendar-day"></i> Kegiatan</li>
+  <li class="active"><i class="fa fa-file-alt"></i> Laporan</li>
+</ul>
+    <button class="logout"><i class="fa fa-sign-out-alt"></i> Logout</button>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <div class="main">
-    <!-- HEADER -->
+   <!-- Header -->
     <div class="header">
-      <h2>Laporan Sarana & Prasarana SMA</h2>
-      <div class="user-info">
-         <span>Oktaviana Dwi</span>
+      <h2>Sistem Sarana & Prasarana SMA</h2>
+      <div class="user">
+        <span>Oktaviana Dwi</span>
         <img src="https://ui-avatars.com/api/?name=Oktaviana+Dwi&background=3a6ff7&color=fff&rounded=true" alt="User"/>
-      
       </div>
     </div>
 
-    <!-- FILTER -->
-    <div class="filter-bar">
-      <select>
-        <option value="">Kabupaten/Kota</option>
-        <option value="tebo">Kabupaten Tebo</option>
-        <option value="merangin">Kabupaten Merangin</option>
-        <option value="sarolangun">Kabupaten Sarolangun</option>
-        <option value="muaro_jambi">Kabupaten Muaro Jambi</option>
-        <option value="bungo">Kabupaten Bungo</option>
-        <option value="kerinci">Kabupaten Kerinci</option>
-        <option value="batanghari">Kabupaten Batanghari</option>
-        <option value="kotajambi">Kota Jambi</option>
-        <option value="kota Sungai Penuh">Kota Sungai Penuh</option>
-        <option value="kabupaten Tanjung Jabung Barat">Kabupaten Tanjung Jabung Barat</option>
-        <option value="kabupaten Tanjung Jabung Timur">Kabupaten Tanjung Jabung Timur</option>
-      </select>
-      <select>
-        <option>Tahun</option>
-          <option>2020/2021</option>
-          <option>2021/2022</option>
-          <option>2022/2023</option>
-          <option>2023/2024</option>
-          <option>2024/2025</option>
-      </select>
-      <select>
-        <option>Jenis Sapras</option>
-          <option>Laboratorium Biologi</option>
-          <option>Laboratorium Kimia</option>
-          <option>Laboratorium Fisika</option>
-          <option>Laboratorium Bahasa</option>
-          <option>Laboratorium Komputer</option>
-          <option>Ruang Kelas</option>
-          <option>Ruang Kepala Sekolah</option>
-          <option>Ruang Tata Usaha</option>
-          <option>Ruang UKS</option>
-          <option>Ruang Guru</option>
-          <option>Toilet</option>
-          <option>Mushola</option>
-          <option>Perpustakaan</option>
-          <option>Pagar</option>
-          <option>Lapangan Basket</option>
-          <option>Lapangan Upacara</option>
-          <option>Lapangan Futsal</option>
-          <option>Ruang Bimbingan Konseling</option>
-      </select>
-      <button class="btn-export">Export</button>
+    <!-- CARDS -->
+    <div class="cards">
+      <div class="card">
+        <img src="rkb.png" alt="">
+        <p>Rp. 2,8 Miliar</p>
+        <span>Nilai Kontrak Pembangunan</span>
+      </div>
+      <div class="card">
+        <img src="icon2.png" alt="">
+        <p>Rp. 3 Miliar</p>
+        <span>Nilai Kontrak Rehabilitasi</span>
+      </div>
+      <div class="card">
+        <img src="icon3.png" alt="">
+        <p>1.100</p>
+        <span>Total Sapras</span>
+      </div>
+      <div class="card">
+        <img src="icon4.png" alt="">
+        <p>100</p>
+        <span>Kondisi Baik</span>
+      </div>
+      <div class="card">
+        <img src="icon5.png" alt="">
+        <p>100</p>
+        <span>Perlu Perbaikan</span>
+      </div>
     </div>
 
-    <!-- TABLE -->
-    <div class="content">
-      <table>
-        <thead>
-          <tr>
-            <th>Nama Kabupaten</th>
-            <th>SMA Negeri</th>
-            <th>SMA Swasta</th>
-            <th>Jumlah Sapras</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Kabupaten Tebo</td>
-            <td>100</td>
-            <td>100</td>
-            <td>45</td>
-            <td class="aksi">
-              <button class="btn-edit">Edit</button>
-              <button class="btn-delete">Hapus</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- CHARTS -->
+  
+    <!-- GRAFIK -->
     <div class="charts">
       <div class="chart">
-        <h4>Perbandingan Sarana & Prasarana SMA</h4>
-        <canvas id="donutChart"></canvas>
+        <h4>Grafik Kondisi Sapras Per Program</h4>
+        <canvas id="barChart"></canvas>
       </div>
       <div class="chart">
-        <h4>Perkembangan Sarana & Prasarana</h4>
-        <canvas id="lineChart"></canvas>
+        <h4>Distribusi per Kegiatan</h4>
+        <canvas id="pieChart"></canvas>
       </div>
     </div>
-  </div>
 
+    <!-- FILTER DAN TABEL -->
+    <div class="table-section">
+      <!-- Filter -->
+      <div class="filters">
+        <select>
+          <option>Program</option>
+          <option>Pembangunan</option>
+          <option>Rehabilitasi</option>
+        </select>
+        <select>
+          <option>Nama Kegiatan</option>
+          <option>Ruang Kelas</option>
+          <option>Perpustakaan</option>
+          <option>Mushola</option>
+          <option>Turap</option>
+          <option>Pagar</option>
+          <option>Gerbang</option>
+          <option>Paving Blok</option>
+          <option>Toilet</option>
+          <option>Aula & Audio</option>
+          <option>UKS</option>
+          <option>Ruang Osis</option>
+          <option>Ruang Kepala Sekolah</option>
+          <option>Lapangan Futsal</option>
+          <option>Ruang Tata Usaha</option>
+        </select>
+        <select>
+          <option>Kondisi</option>
+          <option>Baik</option>
+          <option>Rusak Ringan</option>
+          <option>Rusak Berat</option>
+        </select>
+        <select>
+          <option>Tahun</option>
+          <option>2022</option>
+          <option>2023</option>
+          <option>2024</option>
+          <option>2025</option>
+        </select>
+        <button class="export">Export</button>
+      </div>
+
+      <!-- Judul -->
+      <h4 class="table-title">📑 Data Detail Sarana Prasarana</h4>
+
+      <!-- Tabel -->
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama Sekolah</th>
+              <th>Program</th>
+              <th>Nama Kegiatan</th>
+              <th>Kondisi</th>
+              <th>Tahun Pengadaan</th>
+              <th>Nilai Kontrak</th>
+              <th>Terakhir Dipelihara</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SMAN 1 Tebo</td>
+              <td>Pembangunan</td>
+              <td>Perpustakaan</td>
+              <td class="kondisi kuning">Rusak Ringan</td>
+              <td>2022</td>
+              <td>223,320,000</td>
+              <td>11/02/2023</td>
+            </tr>
+            <tr>
+              <td>SMAN 3 Tebo</td>
+              <td>Pembangunan</td>
+              <td>Ruang Kelas</td>
+              <td class="kondisi hijau">Baik</td>
+              <td>2022</td>
+              <td>223,320,000</td>
+              <td>11/02/2023</td>
+            </tr>
+            <tr>
+              <td>SMAN 4 Tebo</td>
+              <td>Pembangunan</td>
+              <td>Mushola</td>
+              <td class="kondisi merah">Rusak Berat</td>
+              <td>2022</td>
+              <td>223,320,000</td>
+              <td>11/02/2023</td>
+            </tr>
+            <tr>
+              <td>SMAN 2 Tebo</td>
+              <td>Pembangunan</td>
+              <td>Pagar</td>
+              <td class="kondisi merah">Rusak Berat</td>
+              <td>2022</td>
+              <td>223,320,000</td>
+              <td>11/02/2023</td>
+            </tr>
+            <tr>
+              <td>SMAN 10 Tebo</td>
+              <td>Pembangunan</td>
+              <td>Lapangan</td>
+              <td class="kondisi hijau">Baik</td>
+              <td>2022</td>
+              <td>223,320,000</td>
+              <td>11/02/2023</td>
+            </tr>
+            <tr>
+              <td>SMAN 11 Tebo</td>
+              <td>Pembangunan</td>
+              <td>Laboratorium</td>
+              <td class="kondisi kuning">Rusak Ringan</td>
+              <td>2022</td>
+              <td>223,320,000</td>
+              <td>11/02/2023</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Donut Chart
-    const ctxDonut = document.getElementById('donutChart');
-    new Chart(ctxDonut, {
-      type: 'doughnut',
+    // Bar Chart
+    const ctx1 = document.getElementById('barChart');
+    new Chart(ctx1, {
+      type: 'bar',
       data: {
-        labels: ['Baik', 'Rusak Ringan', 'Rusak Berat'],
-        datasets: [{
-          data: [60, 25, 15],
-          backgroundColor: ['#28a745', '#f59e0b', '#dc3545']
-        }]
+        labels: ['Pembangunan', 'Rehabilitasi'],
+        datasets: [
+          { label: 'Baik', data: [150, 120], backgroundColor: '#4CAF50' },
+          { label: 'Rusak Ringan', data: [50, 40], backgroundColor: '#FFC107' },
+          { label: 'Rusak Berat', data: [30, 20], backgroundColor: '#F44336' }
+        ]
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { position: 'right' }
-        }
-      }
+      options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
     });
 
-    // Line Chart
-    const ctxLine = document.getElementById('lineChart');
-    new Chart(ctxLine, {
-      type: 'line',
+    // Pie Chart
+    const ctx2 = document.getElementById('pieChart');
+    new Chart(ctx2, {
+      type: 'doughnut',
       data: {
-        labels: ['2016','2017','2018','2019','2020','2021','2022'],
-        datasets: [{
-          label: 'Jumlah',
-          data: [100, 120, 130, 150, 170, 200, 190],
-          fill: true,
-          borderColor: '#3a6ff7',
-          backgroundColor: 'rgba(58,111,247,0.2)',
-          tension: 0.3,
-          pointBackgroundColor: '#3a6ff7'
+        labels: ['Ruang Kelas', 'Perpustakaan', 'Tata Usaha', 'Mushola', 'Lapangan','Aula & Audio','Toilet','Paving Blok','Gerbang','Pagar','Turap'],
+        datasets: [{ 
+          data: [30, 15, 10, 20, 25,30,20,28,10,40,30,22], 
+            backgroundColor: [
+              '#A7C7E7', // Pastel Biru Muda
+              '#B5EAD7', // Pastel Aqua Hijau-Biru
+              '#C7CEEA', // Pastel Biru Lavender
+              '#D6EAF8', // Biru Pastel Lembut
+              '#AEDFF7', // Biru Pastel Cerah
+              '#B0E0E6', // Powder Blue
+              '#AFEEEE', // Pale Turquoise
+              '#ADD8E6', // Light Blue
+              '#87CEEB', // Sky Blue
+              '#B0C4DE', // Light Steel Blue
+              '#CCE5FF', // Pastel Biru Langit
+              '#D0F0F7'  // Pastel Biru Putih
+            ]
         }]
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: true, position: 'top' }
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
+      options: { responsive: true, plugins: { legend: { position: 'right' } } }
     });
   </script>
 </body>
